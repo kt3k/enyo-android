@@ -3,8 +3,8 @@ apply plugin: 'findbugs'
 apply plugin: 'pmd'
 
 android {
-    compileSdkVersion 20
-    buildToolsVersion "20.0.0"
+    compileSdkVersion 19
+    buildToolsVersion "19.1.0"
 
     defaultConfig {
         applicationId "io.github.enyo"
@@ -28,4 +28,32 @@ dependencies {
     androidTestCompile 'junit:junit:4.11'
     androidTestCompile 'org.mockito:mockito-all:1.9.5'
     androidTestCompile 'org.robolectric:robolectric:2.1.1'
+}
+
+task findbugs(type: FindBugs, dependsOn: assembleDebug){
+    description 'Run findbugs'
+    group 'verification'
+    classes = fileTree("build/intermediates/classes/debug")
+    source = fileTree('src/main/java')
+    classpath = files()
+
+    excludeFilter = file("src/main/exclude.xml")
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}
+
+task pmd(type: Pmd, dependsOn: assembleDebug) {
+    description 'Run pmd'
+    group 'verification'
+
+    ruleSets = ["basic", "braces", "strings", "design", "unusedcode"]
+    source = fileTree('src/main/java')
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
 }
