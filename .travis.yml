@@ -27,7 +27,6 @@ before_script:
 script:
 - chmod +x ./wait_for_emulator
 - ./wait_for_emulator
-- ./gradlew connectedCheck
 - ./gradlew findbugs
 - ./gradlew pmd
 after_success:
