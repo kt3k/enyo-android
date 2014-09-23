@@ -1,0 +1,2 @@
+[![Build Status](https://travis-ci.org/viacheslavokolitiy/enyo-android.svg?branch=master)](https://travis-ci.org/viacheslavokolitiy/enyo-android)
+[![Coverage Status](https://coveralls.io/repos/viacheslavokolitiy/enyo-android/badge.png?branch=master)](https://coveralls.io/r/viacheslavokolitiy/enyo-android?branch=master)
