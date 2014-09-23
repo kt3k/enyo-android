@@ -14,4 +14,5 @@ android:
     - android-sdk-license-5be876d5
 
 after_success:
+- chmod +x ./gradlew
 - ./gradlew cobertura coveralls
