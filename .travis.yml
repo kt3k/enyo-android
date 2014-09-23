@@ -1,0 +1,17 @@
+language: java
+
+jdk:
+- oraclejdk7
+
+env:
+- TERM=dumb
+
+android:
+  components:
+    - build-tools-20.0.0
+    - android-16
+  licenses:
+    - android-sdk-license-5be876d5
+
+after_success:
+- ./gradlew cobertura coveralls
