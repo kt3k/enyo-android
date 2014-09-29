@@ -14,8 +14,6 @@ android:
   - .*intel.+
 
 env:
-  global:
-    - COVERALLS_REPO_TOKEN=Uci2ulYJ6fs0i1cyBZz7Zeq3nzjI4Nkg4
   matrix:
   - ANDROID_TARGET=android-19  ANDROID_ABI=armeabi-v7a
 
